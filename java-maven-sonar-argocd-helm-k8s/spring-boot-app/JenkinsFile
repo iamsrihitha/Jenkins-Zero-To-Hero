@@ -50,6 +50,7 @@ pipeline {
         dir("${WORKSPACE}") {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
+                    git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate-demo
                     pwd
                     ls -la
 
